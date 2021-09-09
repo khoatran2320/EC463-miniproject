@@ -2,9 +2,7 @@ import React, { useState }from 'react';
 import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
 const axios = require("axios");
 
-function search_button_press(){
 
-}
 export default function SearchKeyword() {
 const [text, setText] = useState(0);
   return (
