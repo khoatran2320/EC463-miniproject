@@ -3,21 +3,21 @@ import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
 const axios = require("axios");
 
 
-export default function SearchKeyword() {
+export default function SearchBarcode() {
 const [text, setText] = useState(0);
   return (
     <View>
-      <TextInput placeholder="Search for food by keyword" onChangeText={(text) => setText(text)}/>
+      <TextInput placeholder="Search for food by barcode" onChangeText={(text) => setText(text)}/>
       <Button onPress={() => {
           //connect to backend to search based on keyword
-          axios.get("http://localhost:3000/search_keyword", {
+          axios.get("http://localhost:3000/search_barcode", {
               params: {
                   keyword: text
               }
           })
           .then((res) => {
               //what backend sends to frontend
-            console.log(res.data.foods[0]);
+            console.log(res.data);
           })
           .catch((err) => {
               //error handling
@@ -27,3 +27,5 @@ const [text, setText] = useState(0);
     </View>
   );
 }
+
+
