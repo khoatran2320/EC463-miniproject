@@ -22,7 +22,7 @@ app.get("/search_keyword", (req, res) => {
     })
     .catch((err) => {
         // error handling
-        console.log(err);
+        res.send(err);
     })
 })
 
