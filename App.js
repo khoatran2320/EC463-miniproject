@@ -3,6 +3,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import SearchKeyword from "./components/SearchKeyword";
 import SearchBarcode from "./components/SearchBarcode";
+import CreateUser from "./components/CreateUser";
 
 
 export default function App() {
@@ -10,6 +11,7 @@ export default function App() {
     <View style={styles.container}>
       <SearchKeyword />
       <SearchBarcode />
+      <CreateUser />
       <StatusBar style="auto" />
     </View>
   );
