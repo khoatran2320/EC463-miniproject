@@ -1,10 +1,10 @@
 // routing
 const express = require('express')
-const axios = require("axios")
+const axios = require("axios");
 const cors = require("cors");
-const { response } = require('express');
 const app = express();
 app.use(cors())
+app.use(express.json())
 
 //imports
 
@@ -63,12 +63,12 @@ app.get("/search_barcode", async (req, res) => {
 })
 
 app.post("/add_user", async (req, res) => {
-    console.log(req);
+    console.log(req.body);
     try{
         const user =  {
-            firstName: "Khoa", 
-            lastName: "Tran", 
-            email: "jonwick@gmail.com", 
+            firstName: req.body.firstName, 
+            lastName: req.body.lastName, 
+            email: req.body.email, 
             recipes: []
         }
         const newDoc = await db.collection("users").add(user);
