@@ -1,6 +1,7 @@
 import React, { useState }from 'react';
 import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
 const axios = require("axios");
+import api from "../utils/api"
 
 const axiosConfig = {
     headers: {
@@ -21,7 +22,7 @@ const [password, setPassword] = useState(0);
       <TextInput placeholder="Password" secureTextEntry={true} onChangeText={(text) => setPassword(text)}/>
       <Button onPress={() => {
           console.log(firstName, lastName, email);
-          axios.post("http://localhost:3000/create_user", {
+          axios.post(api.backend_api() + "create_user", {
                     firstName: firstName, 
                     lastName: lastName, 
                     password: password,

@@ -1,6 +1,7 @@
 import React, { useState }from 'react';
 import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
 const axios = require("axios");
+import api from "../utils/api"
 
 
 export default function SearchKeyword() {
@@ -10,7 +11,7 @@ const [text, setText] = useState(0);
       <TextInput placeholder="Search for food by keyword" onChangeText={(text) => setText(text)}/>
       <Button onPress={() => {
           //connect to backend to search based on keyword
-          axios.get("http://localhost:3000/search_keyword", {
+          axios.get(api.backend_api() + "search_keyword", {
               params: {
                   keyword: text
               }
