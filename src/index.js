@@ -16,6 +16,8 @@ admin.initializeApp({
   });
 
 const db = admin.firestore();
+const auth = admin.auth();
+
 
 //fdc
 const FDC_API_KEY = "DEMO_KEY";
@@ -32,6 +34,7 @@ app.get("/search_keyword", (req, res) => {
         }
     } )
     .then((response) => {
+        console.log(response.data);
         //send results back to frontend
         res.send(response.data)
     })
@@ -62,21 +65,58 @@ app.get("/search_barcode", async (req, res) => {
     }
 })
 
-app.post("/add_user", async (req, res) => {
+app.post("/add_recipe", async (req, res) => {
+    console.log(req.body);
+    try{
+        const recipe =  {
+            email: req.body.recipe, 
+            recipes: []
+        }
+        const newDoc = await db.collection("recipes").add(recipe);
+        res.status(201).send(`Created a new recipe: ${newDoc.id}`);
+    }
+    catch (err) {
+        console.log(err);
+        res.status(400).send("Unable to add recipe");
+    }
+})
+
+app.post("/create_user", async (req, res) => {
     console.log(req.body);
     try{
         const user =  {
             firstName: req.body.firstName, 
             lastName: req.body.lastName, 
-            email: req.body.email, 
-            recipes: []
+            email: req.body.email,
+            password: req.body.password
         }
-        const newDoc = await db.collection("users").add(user);
-        res.status(201).send(`Created a new user: ${newDoc.id}`);
+        auth.createUser(user).then((userRecord) => {
+            // See the UserRecord reference doc for the contents of userRecord.
+            console.log('Successfully created new user:', userRecord.uid);
+          })
+          .catch((error) => {
+            console.log('Error creating new user:', error);
+          });
     }
     catch (err) {
         console.log(err);
         res.status(400).send("Unable to create user");
     }
 })
+
+app.post("/login", async (req, res) => {
+    console.log(req.body);
+    try{
+        const creds =  {
+            email: req.body.email,
+            password: req.body.password
+        }
+        auth
+    }
+    catch (err) {
+        console.log(err);
+        res.status(400).send("Unable to create user");
+    }
+})
+
 app.listen(3000, () => console.log("Listening on port 3000"));

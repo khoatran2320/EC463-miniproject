@@ -5,12 +5,10 @@ import SearchKeyword from "./components/SearchKeyword";
 import SearchBarcode from "./components/SearchBarcode";
 import CreateUser from "./components/CreateUser";
 
-
 export default function App() {
   return (
     <View style={styles.container}>
       <SearchKeyword />
-      <SearchBarcode />
       <CreateUser />
       <StatusBar style="auto" />
     </View>
