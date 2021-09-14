@@ -4,14 +4,23 @@ import { StyleSheet, Text, View } from 'react-native';
 import SearchKeyword from "./components/SearchKeyword";
 import SearchBarcode from "./components/SearchBarcode";
 import CreateUser from "./components/CreateUser";
-
+import Login from "./components/Login";
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+const Stack = createNativeStackNavigator();
 export default function App() {
   return (
-    <View style={styles.container}>
-      <SearchKeyword />
-      <CreateUser />
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Login"
+          component={Login}
+          options={{ title: 'Welcome' }}
+        />
+        <Stack.Screen name="CreateUser" component={CreateUser} />
+        <Stack.Screen name="Search" component={SearchKeyword} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
