@@ -9,7 +9,7 @@ import SearchKeyword from "./components/SearchKeyword";
 // import SearchBarcode from "./components/SearchBarcode";
 import CreateUser from "./components/CreateUser";
 import Login from "./components/Login";
-// import CameraScan from "./components/CameraScan";
+import CameraScan from "./components/CameraScan";
 import HomeScreen from "./components/HomeScreen";
 
 // const Stack = createNativeStackNavigator();
@@ -17,7 +17,7 @@ import HomeScreen from "./components/HomeScreen";
 //create stack navigator for the routes
 const Navigator = createStackNavigator({
   HomeScreen: { screen: HomeScreen},
-  // CameraScan: { screen: CameraScan},
+  CameraScan: { screen: CameraScan},
   SearchKeyword: { screen: SearchKeyword },
   CreateUser: { screen: CreateUser },
   Login: { screen: Login }
