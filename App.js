@@ -43,7 +43,7 @@ export default function App() {
         <Stack.Screen
           name="Login"
           component={Login}
-          options={{ title: 'Welcome' }}
+          options={{ title: 'Login' }}
         />
         <Stack.Screen name="Create user" component={CreateUser} />
         <Stack.Screen name="Search" component={SearchKeyword} />
