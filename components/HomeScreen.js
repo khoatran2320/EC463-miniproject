@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
-import { StyleSheet, Text, View, Button, RefreshControlBase} from 'react-native';
+import { StyleSheet, Text, View, Button, Image} from 'react-native';
 // import CameraScan from './CameraScan';
+import styles from '../styles/loginViewStyle';
 
 export default class HomeScreen extends React.Component {
 
@@ -13,27 +14,16 @@ export default class HomeScreen extends React.Component {
 
         return (
             <View style={styles.container}>
-            <Text style={styles.maintext}>Main Menu</Text>
+            <Image
+                style={styles.logo}
+                source={require("../assets/food_logo.png")}
+            />
             <Button title={'Log In'} onPress={() => navigate( 'Login' )} color='green'/>
-            <Button title={'Sign Up'} onPress={() => navigate( 'CreateUser')} color='green'/>
-            <Button title={'Scan Items'} onPress={() => navigate( 'CameraScan')} color='green'/>
-            <Button title={'Search by Item Name'} onPress={() => navigate( 'SearchKeyword')} color='green'/>
+            <Button title={'Sign Up'} onPress={() => navigate( 'Create user')} color='green'/>
+            <Button title={'Scan Items'} onPress={() => navigate( 'Camera scan')} color='green'/>
+            <Button title={'Search by Item Name'} onPress={() => navigate( 'Search')} color='green'/>
             </View>
 
         );
     }
 }
-
-const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-  
-    maintext: {
-      fontSize: 16,
-      margin: 20
-    }
-  });
