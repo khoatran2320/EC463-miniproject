@@ -18,6 +18,7 @@ export default class HomeScreen extends React.Component {
             <Button title={'Sign Up'} onPress={() => navigate( 'CreateUser')} color='green'/>
             <Button title={'Scan Items'} onPress={() => navigate( 'CameraScan')} color='green'/>
             <Button title={'Search by Item Name'} onPress={() => navigate( 'SearchKeyword')} color='green'/>
+            <Button title={'Manage your Recipes'} onPress={() => navigate( 'ManageRecipes')} color='green'/>
             </View>
 
         );

@@ -6,11 +6,12 @@ import { createStackNavigator } from 'react-navigation-stack';
 
 //importing components for page routings
 import SearchKeyword from "./components/SearchKeyword";
-// import SearchBarcode from "./components/SearchBarcode";
 import CreateUser from "./components/CreateUser";
 import Login from "./components/Login";
 import CameraScan from "./components/CameraScan";
 import HomeScreen from "./components/HomeScreen";
+import ManageRecipes from "./components/ManageRecipes"
+import CreateRecipe from "./components/CreateRecipe"
 
 // const Stack = createNativeStackNavigator();
 
@@ -20,14 +21,12 @@ const Navigator = createStackNavigator({
   CameraScan: { screen: CameraScan},
   SearchKeyword: { screen: SearchKeyword },
   CreateUser: { screen: CreateUser },
-  Login: { screen: Login }
+  Login: { screen: Login },
+  ManageRecipes: { screen: ManageRecipes },
+  CreateRecipe: { screen: CreateRecipe}
 });
 
-// export default class App extends React.Component{
-//   render(){
-//     return <HomeScreen/>
-//   }
-// }
+
 const App = createAppContainer(Navigator);
 
 export default App;
