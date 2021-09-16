@@ -3,8 +3,9 @@ import { TouchableOpacity, Text, View, TextInput, Image } from 'react-native';
 const axios = require("axios");
 import api from "../utils/api"
 import styles from '../styles/loginViewStyle';
+import findCal from "../utils/findCal";
 
-export default function SearchKeyword() {
+export default function SearchKeyword({ navigation }) {
 const [text, setText] = useState(0);
   return (
     <View>
@@ -33,6 +34,10 @@ const [text, setText] = useState(0);
             .then((res) => {
                 //what backend sends to frontend
               console.log(res.data.foods[0]);
+              navigation.navigate("Food data", {
+                foodName: text, 
+                calories: findCal(res.data.foods[0].foodNutrients)
+              })
             })
             .catch((err) => {
                 //error handling

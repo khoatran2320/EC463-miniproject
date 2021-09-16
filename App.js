@@ -14,6 +14,7 @@ import CameraScan from "./components/CameraScan";
 import HomeScreen from "./components/HomeScreen";
 import ManageRecipes from "./components/ManageRecipes"
 import CreateRecipe from "./components/CreateRecipe"
+import FoodInfo from "./components/FoodInfo"
 
 const Stack = createNativeStackNavigator();
 
@@ -49,6 +50,7 @@ export default function App() {
         <Stack.Screen name="Create user" component={CreateUser} />
         <Stack.Screen name="Search" component={SearchKeyword} />
         <Stack.Screen name="Camera scan" component={CameraScan} />
+        <Stack.Screen name="Food data" component={FoodInfo} />
 
       </Stack.Navigator>
     </NavigationContainer>

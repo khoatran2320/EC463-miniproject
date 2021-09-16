@@ -1,10 +1,12 @@
 import React, {useState, useEffect} from 'react';
 import { StyleSheet, Text, View, Button, RefreshControlBase} from 'react-native';
 import {BarCodeScanner} from 'expo-barcode-scanner';
+const axios = require("axios");
+import api from "../utils/api"
+import findCal from "../utils/findCal";
 
 
-
-export default function CameraScan(){
+export default function CameraScan( {navigation}){
 
   const [hasPermission, setHasPermission] = useState(null);
   const [scanned, setScanned] = useState(false);
@@ -25,8 +27,26 @@ export default function CameraScan(){
   //when barcode gets scanned 
   const BarCodeScanned = ({ type, data}) => {
       setScanned(true);
-      setText(data);
+      setText(data.substring(1));
       console.log('Data: ' + data)
+      axios.get(api.backend_api() + "search_keyword", {
+        params: {
+            keyword: text
+        }
+      })
+      .then((res) => {
+          //what backend sends to frontend
+        console.log(res.data.foods[0]);
+        navigation.navigate("Food data", {
+          foodName: res.data.foods[0]["brandName"] +" "+ res.data.foods[0]["description"] , 
+          calories: findCal(res.data.foods[0].foodNutrients)
+        })
+      })
+      .catch((err) => {
+          //error handling
+          console.log(err);
+      })
+      
   }
   //check permissions and return the screens
   //screen behind the pop up box that asks for permission
