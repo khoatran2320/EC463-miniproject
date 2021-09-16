@@ -4,13 +4,13 @@ const axios = require("axios");
 import api from "../utils/api"
 import styles from '../styles/loginViewStyle';
 import findCal from "../utils/findCal";
-import auth from "../firebase/config";
+import auth, { fs } from "../firebase/config";
 
 function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
 }
 
-export default function CreateRecipe(){
+export default function CreateRecipe( { navigation }){
   const [recipeName, setRecipeName] = useState('');
   const [text, setText] = useState('');
   const [items, setItems] = useState([]);
@@ -66,9 +66,19 @@ export default function CreateRecipe(){
       />
       <TouchableOpacity
           style={styles.button}
-          onPress={() => {
-            
-        }}>
+          onPress={async () => {
+            if(auth.currentUser){
+              const recipe = {
+                email: auth.currentUser.email,
+                recipeName: recipeName,
+                items: items
+              }
+              const doc = await fs.collection('recipes').add({recipe});
+            }
+            else{
+              navigation.navigate("Login");
+            }
+          }}>
           <Text style={styles.buttonTitle}>Create Recipe</Text>
       </TouchableOpacity>
     </View>
