@@ -50,6 +50,8 @@ export default function App() {
         <Stack.Screen name="Create user" component={CreateUser} />
         <Stack.Screen name="Search" component={SearchKeyword} />
         <Stack.Screen name="Camera scan" component={CameraScan} />
+        <Stack.Screen name="Manage Recipes" component={ManageRecipes}/>
+        <Stack.Screen name="Create Recipe" component={CreateRecipe}/>
         <Stack.Screen name="Food data" component={FoodInfo} />
         <Stack.Screen name="Create recipe" component={CreateRecipe} />
       </Stack.Navigator>

@@ -1,53 +1,32 @@
 import React, {useState, useEffect} from 'react';
 import { render } from 'react-dom';
-import { StyleSheet, Text, View, Button, RefreshControlBase} from 'react-native';
-
+import { TouchableOpacity, StyleSheet, Text, View, Button, RefreshControlBase} from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import styles from '../styles/loginViewStyle';
 
 
 export default function ManageRecipes(){
-    
-    const navigate = this.props.navigation.navigate;
-    // CreateRecipe(() => {
-    //     navigate( 'CreateRecipe' )
-    // }, [])
 
-    // ModifyRecipe(() => {
-    //     <Text style={styles.maintext}>Here you modify recipes</Text>
-    //     navigate( 'Login' )
-    // }, [])
-
-    // DeleteRecipe(() => {
-    //     <Text style={styles.maintext}>Here you delete recipes</Text>
-    //     navigate( 'Login' )
-    // }, [])
     
+    
+    const navigation = useNavigation();
 
     return (
-        <View style={styles.container}>
-        <Text style={styles.maintext}>What would you like to do</Text>
-        <Button title={'Create Recipe'} onPress={() => navigate('CreateRecipe')} color='green'/>
-        {/* <Button title={'Modify Recipe'} onPress={() => ModifyRecipe()} color='blue'/>
-        <Button title={'Delete Recipe'} onPress={() => DeleteRecipe()} color='red'/> */}
+        <View style={containerstyles.container}>
+        <Text style={containerstyles.maintext}>What would you like to do</Text>
+        <TouchableOpacity onPress={() => navigation.navigate('Create Recipe') } style={styles.button}><Text style={styles.buttonTitle}>Create a new recipe</Text></TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate( 'Modify Recipe' )} style={styles.button}><Text style={styles.buttonTitle}>Modify a recipe</Text></TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate( 'Delete Recipe' )} style={styles.button}><Text style={styles.buttonTitle}>Delete a recipe</Text></TouchableOpacity>
         </View>
     );
 }
 
-const styles = StyleSheet.create({
+const containerstyles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-  },
-
-  barcodebox: {
-    backgroundColor : 'blue',
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: 200,
-    width: 350,
-    overflow: 'hidden',
-    borderRadius: 30
   },
 
   maintext: {
