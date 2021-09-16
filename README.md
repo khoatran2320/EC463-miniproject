@@ -33,7 +33,8 @@ A user must register with an email and password before they can start using the 
 * react-navigation
 
 ## Images
-<img src="screen1.jpeg" width="200"/>
-<img src="screen2.jpeg" width="200"/>
+<img src="/assets/screen1.jpeg" width="200"/>
+<img src="/assets/screen2.jpeg" width="200"/>
+
 ## Videos
 
