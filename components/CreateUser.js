@@ -11,7 +11,7 @@ const axiosConfig = {
       }
   };
 
-export default function CreateUser() {
+export default function CreateUser( {navigation} ) {
 const [email, setEmail] = useState(0);
 const [password, setPassword] = useState(0);
   return (
@@ -47,6 +47,7 @@ const [password, setPassword] = useState(0);
                           // Signed in 
                           const user = userCredential.user;
                           console.log(user);
+                          navigation.navigate("Login");
                           // ...
                         })
                         .catch((error) => {
