@@ -51,7 +51,7 @@ export default function App() {
         <Stack.Screen name="Search" component={SearchKeyword} />
         <Stack.Screen name="Camera scan" component={CameraScan} />
         <Stack.Screen name="Food data" component={FoodInfo} />
-
+        <Stack.Screen name="Create recipe" component={CreateRecipe} />
       </Stack.Navigator>
     </NavigationContainer>
   );

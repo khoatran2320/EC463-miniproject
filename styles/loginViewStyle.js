@@ -36,6 +36,16 @@ export default StyleSheet.create({
         alignItems: "center",
         justifyContent: 'center'
     },
+    button_alt: {
+        backgroundColor: '#ffbe0d',
+        marginLeft: 30,
+        marginRight: 30,
+        marginTop: 20,
+        height: 48,
+        borderRadius: 5,
+        alignItems: "center",
+        justifyContent: 'center'
+    },
     buttonTitle: {
         color: 'white',
         fontSize: 16,

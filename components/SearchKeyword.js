@@ -6,7 +6,7 @@ import styles from '../styles/loginViewStyle';
 import findCal from "../utils/findCal";
 
 export default function SearchKeyword({ navigation }) {
-const [text, setText] = useState(0);
+const [text, setText] = useState('');
   return (
     <View>
       <Image
