@@ -9,6 +9,7 @@ import "firebase/auth"
 const firebaseConfig = {
   apiKey: "AIzaSyA9fV8ckN8qksj05BYuepH_tH6ks_OCpBA",
   authDomain: "ec463-miniproject-8f46b.firebaseapp.com",
+  databaseURL: "https://ec463-miniproject-8f46b-default-rtdb.firebaseio.com/",
   projectId: "ec463-miniproject-8f46b",
   storageBucket: "ec463-miniproject-8f46b.appspot.com",
   messagingSenderId: "31817567446",
