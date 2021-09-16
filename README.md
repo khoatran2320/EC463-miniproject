@@ -33,6 +33,7 @@ A user must register with an email and password before they can start using the 
 * react-navigation
 
 ## Images
-
+![Log in screen](/assets/screen1.png).
+![Main menu](/assets/screen2.png).
 ## Videos
 
