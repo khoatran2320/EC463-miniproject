@@ -47,7 +47,7 @@ const [password, setPassword] = useState(0);
                           // Signed in 
                           const user = userCredential.user;
                           console.log(user);
-                          navigation.navigate("Login");
+                          navigation.navigate("Home page");
                           // ...
                         })
                         .catch((error) => {
