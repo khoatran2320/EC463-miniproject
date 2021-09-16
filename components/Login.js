@@ -2,9 +2,10 @@ import React, { useState }from 'react';
 import { TouchableOpacity, Text, View, TextInput, Image } from 'react-native';
 import auth from "../firebase/config";
 import styles from '../styles/loginViewStyle';
-
+import { useNavigation } from '@react-navigation/native';
 
 export default function Login({ navigation }) {
+
 const [email, setEmail] = useState(0);
 const [password, setPassword] = useState(0);
   return (
@@ -42,14 +43,21 @@ const [password, setPassword] = useState(0);
                           console.log(user);
                           setEmail('');
                           setPassword('');
-                          navigation.navigate('Search');
+                          navigation.navigate('Search Options');
                           // ...
                         })
                         .catch((error) => {
                           const errorCode = error.code;
                           const errorMessage = error.message;
                           console.log(errorCode, errorMessage);
-                          // ..
+                          Alert.alert(
+                            errorMessage,
+                            'Please try again',
+                            [{
+                              text: 'Try Again',
+                              onPress: () => console.log('error message displayed')
+                            }]
+                          )
                         });
                     }}>
                     <Text style={styles.buttonTitle}>Log in</Text>
