@@ -1,5 +1,5 @@
 import React, { useState }from 'react';
-import { TouchableOpacity, Text, View, TextInput, Image } from 'react-native';
+import { TouchableOpacity, Text, View, TextInput, Image, Alert } from 'react-native';
 const axios = require("axios");
 import auth from "../firebase/config";
 import styles from '../styles/loginViewStyle';
@@ -47,13 +47,28 @@ const [password, setPassword] = useState(0);
                           // Signed in 
                           const user = userCredential.user;
                           console.log(user);
-                          navigation.navigate("Home page");
-                          // ...
+                          Alert.alert(
+                            'Registration succeeded',
+                            'Please log in now',
+                            [{
+                              text: 'Go back to Log In',
+                              onPress: () => navigation.navigate("Home page")
+                            }]
+                          )
+                          
                         })
                         .catch((error) => {
                           const errorCode = error.code;
                           const errorMessage = error.message;
                           console.log(errorCode, errorMessage);
+                          Alert.alert(
+                            errorMessage,
+                            'Please try again',
+                            [{
+                              text: 'Try Again',
+                              onPress: () => console.log('error message displayed')
+                            }]
+                          )
                           // ..
                         });
                     }}>

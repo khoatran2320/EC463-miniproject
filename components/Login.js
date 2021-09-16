@@ -50,7 +50,14 @@ const [password, setPassword] = useState(0);
                           const errorCode = error.code;
                           const errorMessage = error.message;
                           console.log(errorCode, errorMessage);
-                          // ..
+                          Alert.alert(
+                            errorMessage,
+                            'Please try again',
+                            [{
+                              text: 'Try Again',
+                              onPress: () => console.log('error message displayed')
+                            }]
+                          )
                         });
                     }}>
                     <Text style={styles.buttonTitle}>Log in</Text>
