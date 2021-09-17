@@ -32,6 +32,14 @@ A user must register with an email and password before they can start using the 
 * axios
 * react-navigation
 
+## Steps to run the App
+1. Install the Expo CLI in your computer 'npm install -g expo-cli'
+2. Download the Expo Go App from App store on your mobile device
+3. Under the project directory, run the starting command to start running the App 'expo start'
+4. Once the QR code appears, you can scan it with your mobile device and the project will open showing the App's UI
+5. Enjoy our App! 
+
+
 ## Images
 <img src="/assets/screen1.jpeg" width="200"/>
 <img src="/assets/screen2.jpeg" width="200"/>
