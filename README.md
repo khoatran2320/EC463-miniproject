@@ -51,8 +51,13 @@ A user must register with an email and password before they can start using the 
 ### Refer to Github Issues for the team's tracking of the workload
 
 ## Images
-<img src="/assets/screen1.jpeg" width="200"/>
-<img src="/assets/screen2.jpeg" width="200"/>
+<img src="/assets/login.jpg" width="200"/>
+<img src="/assets/pop1.jpg" width="200"/>
+<img src="/assets/pop2.jpg" width="200"/>
+<img src="/assets/searchoptions2.jpg" width="200"/>
+<img src="/assets/searchname.jpg" width="200"/>
+<img src="/assets/barcode.jpg" width="200"/>
+<img src="/assets/recipedetails.jpg" width="200"/>
 
 ## Demo Video
 
