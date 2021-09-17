@@ -74,6 +74,7 @@ export default function CreateRecipe( { navigation }){
                 items: items
               }
               const doc = await fs.collection('recipes').add({recipe});
+              navigation.navigate("Search Options", {cheese: "hello"});
             }
             else{
               navigation.navigate("Login");

@@ -16,6 +16,8 @@ import ManageRecipes from "./components/ManageRecipes";
 import CreateRecipe from "./components/CreateRecipe";
 import FoodInfo from "./components/FoodInfo";
 import SearchOptions from "./components/SearchOptions";
+import RecipesPage from "./components/RecipesPage";
+import RecipeDetails from "./components/RecipeDetails";
 
 const Stack = createNativeStackNavigator();
 
@@ -38,6 +40,8 @@ export default function App() {
         <Stack.Screen name="Food data" component={FoodInfo} />
         <Stack.Screen name="Create recipe" component={CreateRecipe} />
         <Stack.Screen name="Search Options" component={SearchOptions} />
+        <Stack.Screen name="Recipes Page" component={RecipesPage} />
+        <Stack.Screen name="Recipe Details" component={RecipeDetails} />
       </Stack.Navigator>
     </NavigationContainer>
   );
