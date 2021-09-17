@@ -56,3 +56,9 @@ A user must register with an email and password before they can start using the 
 
 ## Demo Video
 
+
+https://user-images.githubusercontent.com/48025259/133708960-2314cd63-a07e-4257-b29e-21884e34b3f8.MP4
+
+
+## Credits
+- UI styling obtained from: https://www.freecodecamp.org/news/react-native-firebase-tutorial/
