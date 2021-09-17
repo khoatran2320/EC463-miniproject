@@ -13,10 +13,19 @@
 - Teamwork
 - Version control
 
-## Main resources used for developements
-* React Native Expo CLI
-* Express 
-* Google Firebase
+## Design Choices
+* React Native Expo CLI used for Front End development
+* Express fro NodeJS used for Backend development
+* Google Firebase used as out database live server.
+
+## Design choices for major objectives
+* Firebase auth module for user sign in authentication
+* User Text inputs are used for recipe creation. Recipe data is stored in Firebase for the App to access. 
+* Expo-barcode-scanner module used for camera plug in and barcode scanning functionality.
+* Uset Text inputs and FDA API is used for searching by item name.
+
+## Information on Backend Development
+[Backend Repo](https://github.com/khoatran2320/EC463-miniproj_backend)
 
 ## Solution Description
 We built a cross platform React Native App using the Expo CLI for development and testing. The backend is built with Express for NodeJS and linked to Google's Firebase for database usage. 
@@ -39,10 +48,11 @@ A user must register with an email and password before they can start using the 
 4. Once the QR code appears, you can scan it with your mobile device and the project will open showing the App's UI
 5. Enjoy our App! 
 
+### Refer to Github Issues for the team's tracking of the workload
 
 ## Images
 <img src="/assets/screen1.jpeg" width="200"/>
 <img src="/assets/screen2.jpeg" width="200"/>
 
-## Videos
+## Demo Video
 
