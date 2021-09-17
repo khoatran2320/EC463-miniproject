@@ -46,3 +46,5 @@ A user must register with an email and password before they can start using the 
 
 ## Videos
 
+## Credits
+- UI styling obtained from: https://www.freecodecamp.org/news/react-native-firebase-tutorial/
